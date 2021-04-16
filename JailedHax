@@ -1,0 +1,172 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local jailbreak = Instance.new("ScreenGui")
+local mainFrame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local close = Instance.new("TextButton")
+local speed = Instance.new("TextLabel")
+local plus10Speed = Instance.new("TextButton")
+local min10Speed = Instance.new("TextButton")
+local BTools = Instance.new("TextButton")
+local delBuildings = Instance.new("TextButton")
+local DelBankBarrier = Instance.new("TextButton")
+local delTrees = Instance.new("TextButton")
+local lol = Instance.new("TextLabel")
+
+--Properties:
+
+jailbreak.Name = "jailbreak"
+jailbreak.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+jailbreak.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+mainFrame.Name = "mainFrame"
+mainFrame.Parent = jailbreak
+mainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+mainFrame.Position = UDim2.new(0.0686963275, 0, 0.500641763, 0)
+mainFrame.Size = UDim2.new(0, 526, 0, 379)
+
+TextLabel.Parent = mainFrame
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+TextLabel.Size = UDim2.new(0, 526, 0, 50)
+TextLabel.Font = Enum.Font.GothamBlack
+TextLabel.Text = "jailedHax"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+close.Name = "close"
+close.Parent = mainFrame
+close.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+close.Position = UDim2.new(0.872623563, 0, 0.868073881, 0)
+close.Size = UDim2.new(0, 67, 0, 50)
+close.Font = Enum.Font.GothamBlack
+close.Text = "X"
+close.TextColor3 = Color3.fromRGB(255, 255, 255)
+close.TextScaled = true
+close.TextSize = 14.000
+close.TextWrapped = true
+close.MouseButton1Down:connect(function()
+	mainFrame.Visible = false
+end)
+
+speed.Name = "speed"
+speed.Parent = mainFrame
+speed.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+speed.Position = UDim2.new(0.0380228125, 0, 0.160949871, 0)
+speed.Size = UDim2.new(0, 135, 0, 50)
+speed.Font = Enum.Font.GothamBlack
+speed.Text = "speed"
+speed.TextColor3 = Color3.fromRGB(255, 255, 255)
+speed.TextScaled = true
+speed.TextSize = 14.000
+speed.TextWrapped = true
+
+plus10Speed.Name = "plus10Speed"
+plus10Speed.Parent = mainFrame
+plus10Speed.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+plus10Speed.Position = UDim2.new(0.186311781, 0, 0.321899742, 0)
+plus10Speed.Size = UDim2.new(0, 57, 0, 50)
+plus10Speed.Font = Enum.Font.GothamBlack
+plus10Speed.Text = "+ 10 speed"
+plus10Speed.TextColor3 = Color3.fromRGB(255, 255, 255)
+plus10Speed.TextScaled = true
+plus10Speed.TextSize = 14.000
+plus10Speed.TextWrapped = true
+plus10Speed.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed + 10
+end)
+
+min10Speed.Name = "min10Speed"
+min10Speed.Parent = mainFrame
+min10Speed.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+min10Speed.Position = UDim2.new(0.0380228125, 0, 0.321899742, 0)
+min10Speed.Size = UDim2.new(0, 54, 0, 50)
+min10Speed.Font = Enum.Font.GothamBlack
+min10Speed.Text = "- 10 speed"
+min10Speed.TextColor3 = Color3.fromRGB(255, 255, 255)
+min10Speed.TextScaled = true
+min10Speed.TextSize = 14.000
+min10Speed.TextWrapped = true
+min10Speed.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed - 10
+end)
+
+BTools.Name = "BTools"
+BTools.Parent = mainFrame
+BTools.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+BTools.Position = UDim2.new(0.336501896, 0, 0.160949871, 0)
+BTools.Size = UDim2.new(0, 143, 0, 50)
+BTools.Font = Enum.Font.GothamBlack
+BTools.Text = "BTools"
+BTools.TextColor3 = Color3.fromRGB(255, 255, 255)
+BTools.TextScaled = true
+BTools.TextSize = 14.000
+BTools.TextWrapped = true
+BTools.MouseButton1Click:connect(function()
+	wait(0.1)
+	local tool1 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+	local tool2 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+	local tool3 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+	tool1.BinType = "Clone"
+	tool2.BinType = "Hammer"
+	tool3.BinType = "Grab"
+end)
+
+delBuildings.Name = "delBuildings"
+delBuildings.Parent = mainFrame
+delBuildings.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+delBuildings.Position = UDim2.new(0.669201493, 0, 0.160949871, 0)
+delBuildings.Size = UDim2.new(0, 143, 0, 50)
+delBuildings.Font = Enum.Font.GothamBlack
+delBuildings.Text = "Delete Buildings"
+delBuildings.TextColor3 = Color3.fromRGB(255, 255, 255)
+delBuildings.TextScaled = true
+delBuildings.TextSize = 14.000
+delBuildings.TextWrapped = true
+delBuildings.MouseButton1Down:connect(function()
+	game.Workspace.Buildings:Destroy()
+end)
+
+DelBankBarrier.Name = "DelBankBarrier"
+DelBankBarrier.Parent = mainFrame
+DelBankBarrier.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+DelBankBarrier.Position = UDim2.new(0.336501896, 0, 0.321899742, 0)
+DelBankBarrier.Size = UDim2.new(0, 143, 0, 50)
+DelBankBarrier.Font = Enum.Font.GothamBlack
+DelBankBarrier.Text = "delete bank door"
+DelBankBarrier.TextColor3 = Color3.fromRGB(255, 255, 255)
+DelBankBarrier.TextScaled = true
+DelBankBarrier.TextSize = 14.000
+DelBankBarrier.TextWrapped = true
+
+delTrees.Name = "delTrees"
+delTrees.Parent = mainFrame
+delTrees.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+delTrees.Position = UDim2.new(0.669201493, 0, 0.321899742, 0)
+delTrees.Size = UDim2.new(0, 143, 0, 50)
+delTrees.Font = Enum.Font.GothamBlack
+delTrees.Text = "delete all trees(not palm trees)"
+delTrees.TextColor3 = Color3.fromRGB(255, 255, 255)
+delTrees.TextScaled = true
+delTrees.TextSize = 14.000
+delTrees.TextWrapped = true
+delTrees.MouseButton1Down:connect(function()
+	game.Workspace.Trees:Destroy()
+end)
+
+
+lol.Name = "lol"
+lol.Parent = mainFrame
+lol.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+lol.Position = UDim2.new(0, 0, 0.506596327, 0)
+lol.Size = UDim2.new(0, 526, 0, 50)
+lol.Font = Enum.Font.GothamBlack
+lol.Text = "more functions coming later"
+lol.TextColor3 = Color3.fromRGB(255, 255, 255)
+lol.TextScaled = true
+lol.TextSize = 14.000
+lol.TextWrapped = true
